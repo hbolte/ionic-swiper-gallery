@@ -14,14 +14,14 @@ export class GalleryPage {
   public config: SwiperOptions = {
     direction: 'horizontal',
     slidesPerView: 1,
-    scrollbar: false,
     zoom: {
       minRatio: 1,
       maxRatio: 3
     },
     pagination: {
       el: '.swiper-pagination'
-    }
+    },
+    touchEventsTarget: 'wrapper',
   };
 
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
@@ -52,6 +52,7 @@ export class GalleryPage {
   }
 
   onTouchStart(touchstart: TouchEvent) {
+    if (!touchstart || !touchstart.targetTouches) return;
     let touch = touchstart.targetTouches[0];
     if (touch) {
       const x = touch.pageX + 'px';
@@ -61,6 +62,7 @@ export class GalleryPage {
   }
 
   onTouchEnd(touchend: TouchEvent) {
+    if (!touchend || !touchend.targetTouches) return;
     let touch = touchend.targetTouches[0];
     if (touch) {
       const x = touch.pageX + 'px';
@@ -70,6 +72,7 @@ export class GalleryPage {
   }
 
   onTouchMove(touchmove: TouchEvent) {
+    if (!touchmove || !touchmove.targetTouches) return;
     let touch = touchmove.targetTouches[0];
     if (touch) {
       const x = touch.pageX + 'px';
@@ -79,6 +82,7 @@ export class GalleryPage {
   }
 
   onSliderMove(touchmove: TouchEvent) {
+    if (!touchmove || !touchmove.targetTouches) return;
     let touch = touchmove.targetTouches[0];
     if (touch) {
       const x = touch.pageX + 'px';
