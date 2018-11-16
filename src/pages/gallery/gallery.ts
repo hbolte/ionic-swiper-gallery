@@ -21,7 +21,7 @@ export class GalleryPage {
     pagination: {
       el: '.swiper-pagination'
     },
-    touchEventsTarget: 'wrapper',
+    touchEventsTarget: 'container',
   };
 
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
