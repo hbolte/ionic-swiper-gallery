@@ -1,3 +1,3 @@
 # ionic-swiper-gallery
 
-Test
+Usage of [Swiper JS Api](https://github.com/nolimits4web/swiper/) in Ionic v3 projects
